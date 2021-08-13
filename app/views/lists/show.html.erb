@@ -1,0 +1,18 @@
+<h1>Lists#show</h1>
+<p>Find me in app/views/lists/show.html.erb</p>
+
+<%= @list.name %>
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+  <li>Comment: <%= bookmark.comment %></li>
+  <% end %>
+  <% @list.movies.each_with_index do |movie,index| %>
+  <p></p>
+  <li>Movie n°<%= "#{index + 1}" %></li>
+  <li>Movie Title: <%= movie.title %> <%= link_to "See more", movie_path(movie) %></li>
+  <li>Movie rating: <%= movie.rating %> </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Back to all lists", lists_path %></p>
+<%= link_to "Add Bookmark", new_list_bookmark_path(@list) %>
