@@ -1,5 +1,10 @@
 <h1>Movies#show</h1>
 <p>Find me in app/views/movies/show.html.erb</p>
-
+<ul>
+  <li>Movie Title: <%= @movie.title %></li>
+  <li>Rating: <%= @movie.rating %></li>
+  <li><%= image_tag(@movie.poster_url, size: "150") %></li>
+  <li>Movie description: <%= @movie.overview %></li>
+</ul>
 
 <%= link_to "back to list all movies", movies_path%>
